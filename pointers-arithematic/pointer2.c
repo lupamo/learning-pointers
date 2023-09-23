@@ -7,18 +7,16 @@
  */
 int main(void)
 {
-   int *p;
-   int a[2];
-   int n;
+    int n = 98;
+    int *p = &n;
+    
+    printf("Value of %d\n", n);
+    printf("address of n is %p\n", &n);
+    printf("address of p is %p\n", &p);
 
-   p = &n;
-   printf("p = &n;\np: %p\n", p);
-   printf("p + 1: %p\n", p + 1);
-   printf("p + 2: %p\n", p + 2);
-   printf("p + 10: %p\n", p + 10);
-   /* possible since a is evaluated */
-   /* as an int * in this context */
-   p = a;
-   printf("p = a;\np: %p\np + 1: %p\n", p, p + 1);
+    *p = 402;
+
+    printf("The new value of n: %d\n", n);
+    printf("The new address of n is: %p\n", &n);
    return (0);
 }
